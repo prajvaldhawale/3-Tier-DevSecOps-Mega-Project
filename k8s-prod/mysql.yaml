@@ -81,10 +81,15 @@ spec:
         app: mysql
     spec:
       containers:
+          
         - name: mysql
           image: mysql:8
           ports:
             - containerPort: 3306
+          resources:
+            requests:
+            cpu: "250m"
+            memory: "512Mi"
           env:
             - name: MYSQL_ROOT_PASSWORD
               valueFrom:
